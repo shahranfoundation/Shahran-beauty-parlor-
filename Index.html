@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Shahran Beauty Parlor – Where Beauty Meets Elegance</title>
+  <!-- Google Fonts & Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fffaf8;
+      color: #4a2e2a;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3, .logo {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header & Nav */
+    header {
+      background: #ffffffdd;
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      padding: 15px 0;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #b55b4b;
+      letter-spacing: 1px;
+    }
+
+    .logo p {
+      font-size: 0.8rem;
+      color: #a07a6e;
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #4a2e2a;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #b55b4b;
+    }
+
+    .btn-wa {
+      background: #25D366;
+      color: white;
+      padding: 10px 22px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-wa:hover {
+      background: #128C7E;
+      transform: scale(1.02);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #b55b4b;
+      color: #b55b4b;
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn-outline:hover {
+      background: #b55b4b;
+      color: white;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #fdede8 0%, #ffe6e0 100%);
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      color: #4a2e2a;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      color: #6e4b42;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Sections */
+    section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 50px;
+      color: #b55b4b;
+      position: relative;
+    }
+
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 70px;
+      height: 3px;
+      background: #e4b4a8;
+      margin: 12px auto 0;
+    }
+
+    /* Catalog grid */
+    .services-grid, .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+
+    .service-card h3 {
+      margin: 15px 0 8px;
+      font-size: 1.5rem;
+    }
+
+    .price {
+      font-weight: 700;
+      color: #b55b4b;
+      font-size: 1.2rem;
+      margin: 10px 0;
+    }
+
+    .service-card p {
+      color: #7a5a52;
+      font-size: 0.9rem;
+      padding: 0 5px;
+    }
+
+    .wa-service-btn {
+      background: #25D366;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 40px;
+      margin-top: 15px;
+      cursor: pointer;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.2s;
+    }
+
+    /* Gallery */
+    .gallery-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 20px;
+      transition: 0.3s;
+    }
+
+    .gallery-card img:hover {
+      transform: scale(1.02);
+    }
+
+    /* Testimonials */
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .testimonial {
+      background: white;
+      padding: 25px;
+      border-radius: 28px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.03);
+      text-align: center;
+    }
+
+    .testimonial i {
+      font-size: 2rem;
+      color: #e4b4a8;
+      margin-bottom: 12px;
+    }
+
+    /* About */
+    .about-text {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .features {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .feature {
+      text-align: center;
+    }
+
+    .feature i {
+      font-size: 2rem;
+      color: #b55b4b;
+    }
+
+    /* Contact & Map */
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 35px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: white;
+      padding: 12px 25px;
+      border-radius: 60px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    .contact-item i {
+      font-size: 1.3rem;
+      color: #b55b4b;
+    }
+
+    .map-placeholder {
+      background: #e9dfdb;
+      border-radius: 28px;
+      padding: 30px;
+      text-align: center;
+      max-width: 500px;
+      margin: 20px auto 0;
+    }
+
+    /* Inquiry Form (optional but sends via WhatsApp) */
+    .inquiry-form {
+      max-width: 500px;
+      margin: 30px auto 0;
+      background: white;
+      padding: 25px;
+      border-radius: 28px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+    }
+
+    .inquiry-form input, .inquiry-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #f0dbd5;
+      border-radius: 40px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .inquiry-form textarea {
+      border-radius: 20px;
+      resize: vertical;
+    }
+
+    /* Footer */
+    footer {
+      background: #2c1e1b;
+      color: #f2e1db;
+      text-align: center;
+      padding: 40px 0 25px;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+
+    .social-icons a {
+      color: #f2e1db;
+      font-size: 1.6rem;
+      transition: 0.2s;
+    }
+
+    .social-icons a:hover {
+      color: #e4b4a8;
+    }
+
+    /* floating WA button */
+    .float-wa {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      z-index: 99;
+      transition: 0.2s;
+      text-decoration: none;
+    }
+
+    .float-wa:hover {
+      background: #128C7E;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .nav-links {
+        gap: 1.2rem;
+      }
+      .hero h2 {
+        font-size: 2rem;
+      }
+      .section-title {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container nav-container">
+    <div class="logo">
+      <h1>Shahran Beauty Parlor</h1>
+      <p>Where Beauty Meets Elegance</p>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#" id="inquiryBtnHeader" class="btn-outline"><i class="fab fa-whatsapp"></i> Inquiry</a>
+  </div>
+</header>
+
+<!-- Hero -->
+<section id="home" class="hero">
+  <div class="container">
+    <h2>Experience Royal Glow</h2>
+    <p>Professional makeup, bridal packages, and premium skincare – all under one roof at Shahran Beauty Parlor.</p>
+    <div class="hero-buttons">
+      <a href="#" id="heroBookBtn" class="btn-wa"><i class="fab fa-whatsapp"></i> Book Appointment</a>
+      <a href="#" id="heroInquiryBtn" class="btn-outline"><i class="fab fa-whatsapp"></i> Send Inquiry</a>
+    </div>
+  </div>
+</section>
+
+<!-- Catalog / Services -->
+<section id="services">
+  <div class="container">
+    <h2 class="section-title">Our Signature Services</h2>
+    <div class="services-grid" id="servicesGrid"></div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section id="gallery" style="background: #fef6f3;">
+  <div class="container">
+    <h2 class="section-title">Our Glam Gallery</h2>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials">
+  <div class="container">
+    <h2 class="section-title">Lovely Words</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial"><i class="fas fa-star-of-life"></i><p>"Best bridal makeup in town! Shahran made me feel like a queen on my big day. Highly recommend!"</p><h4>— Priya S.</h4></div>
+      <div class="testimonial"><i class="fas fa-spa"></i><p>"Amazing facial and skincare. Very hygienic and professional staff. Will visit again."</p><h4>— Ayesha K.</h4></div>
+      <div class="testimonial"><i class="fas fa-hand-peace"></i><p>"Quick WhatsApp booking and lovely service. The nail art was stunning!"</p><h4>— Neha M.</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- About + Why Us -->
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">Why Shahran?</h2>
+    <div class="about-text">
+      <p>At Shahran Beauty Parlor, we blend modern techniques with traditional elegance. Our expert artists use only premium products, ensuring your skin and hair receive the best care. Hygiene, punctuality, and customer delight drive everything we do.</p>
+    </div>
+    <div class="features">
+      <div class="feature"><i class="fas fa-certificate"></i><p>Certified Experts</p></div>
+      <div class="feature"><i class="fas fa-leaf"></i><p>Organic Products</p></div>
+      <div class="feature"><i class="fas fa-clock"></i><p>On-Time Service</p></div>
+      <div class="feature"><i class="fas fa-smile"></i><p>100% Satisfaction</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact + Inquiry Form (WhatsApp driven) -->
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="contact-info">
+      <div class="contact-item"><i class="fab fa-whatsapp"></i> +91 8433412626</div>
+      <div class="contact-item"><i class="fas fa-envelope"></i> hello@shahranbeauty.com</div>
+      <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Near City Mall, Indore</div>
+    </div>
+
+    <!-- Inquiry form that sends via WhatsApp -->
+    <div class="inquiry-form">
+      <h3 style="text-align:center; margin-bottom:15px;">Quick Inquiry via WhatsApp</h3>
+      <input type="text" id="inquiryName" placeholder="Your Name">
+      <input type="tel" id="inquiryPhone" placeholder="Phone Number (optional)">
+      <textarea id="inquiryMsg" rows="3" placeholder="Tell us your requirement... (e.g., bridal makeup, hair styling, etc.)"></textarea>
+      <button id="sendInquiryBtn" class="btn-wa" style="width:100%; justify-content:center;"><i class="fab fa-whatsapp"></i> Send Inquiry on WhatsApp</button>
+    </div>
+
+    <div class="map-placeholder">
+      <i class="fas fa-map-marked-alt" style="font-size:2rem; color:#b55b4b;"></i>
+      <p>📍 3rd Floor, Glamour Plaza, Opposite City Mall</p>
+      <a href="#" style="color:#b55b4b;">View on Google Maps →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="social-icons">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+  </div>
+  <p>© 2025 Shahran Beauty Parlor | Where Beauty Meets Elegance</p>
+</footer>
+
+<!-- Floating WhatsApp Inquiry Button -->
+<a href="#" id="floatingWABtn" class="float-wa"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+  // WhatsApp number
+  const WA_NUMBER = "918433412626";
+
+  // Helper function to open WhatsApp with custom text
+  function openWhatsApp(text) {
+    const encodedText = encodeURIComponent(text);
+    window.open(`https://wa.me/${WA_NUMBER}?text=${encodedText}`, '_blank');
+  }
+
+  // Service Catalog Data
+  const services = [
+    { name: "Bridal Makeup", desc: "Traditional + Airbrush finish, touch-up kit included", price: "₹8,999", img: "https://images.unsplash.com/photo-1519671482749-fd09be7c5bf5?w=400&h=300&fit=crop" },
+    { name: "Party Makeup", desc: "Glamorous look for sangeet/reception", price: "₹4,499", img: "https://images.unsplash.com/photo-1526045478516-aa4599b9cfec?w=400&h=300&fit=crop" },
+    { name: "Hair Styling", desc: "Blow-dry, curls, braiding, updo", price: "₹1,499", img: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=400&h=300&fit=crop" },
+    { name: "Facial & Glow", desc: "Organic gold facial, de-tan, deep cleansing", price: "₹2,299", img: "https://images.unsplash.com/photo-1570172619644-d2d6b0b4f5d2?w=400&h=300&fit=crop" },
+    { name: "Manicure & Pedicure", desc: "Nail shaping, cuticle care, gel polish", price: "₹1,799", img: "https://images.unsplash.com/photo-1598274371894-a3b60d2482cc?w=400&h=300&fit=crop" },
+    { name: "Waxing", desc: "Full body / half body – smooth results", price: "₹1,299", img: "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=400&h=300&fit=crop" },
+    { name: "Threading & Brow", desc: "Precise eyebrow shaping & upper lip", price: "₹249", img: "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=400&h=300&fit=crop" },
+    { name: "Nail Art", desc: "French, 3D, gel extensions", price: "₹899", img: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&h=300&fit=crop" }
+  ];
+
+  // Gallery images
+  const galleryImages = [
+    "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&h=280&fit=crop",
+    "https://images.unsplash.com/photo-1595475207225-428b62bda831?w=400&h=280&fit=crop",
+    "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=400&h=280&fit=crop",
+    "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=400&h=280&fit=crop",
+    "https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=400&h=280&fit=crop",
+    "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&h=280&fit=crop"
+  ];
+
+  function renderServices() {
+    const grid = document.getElementById('servicesGrid');
+    grid.innerHTML = services.map(service => `
+      <div class="service-card">
+        <img src="${service.img}" alt="${service.name}" loading="lazy">
+        <h3>${service.name}</h3>
+        <p>${service.desc}</p>
+        <div class="price">${service.price}</div>
+        <button class="wa-service-btn" data-service="${service.name}"><i class="fab fa-whatsapp"></i> Book on WhatsApp</button>
+      </div>
+    `).join('');
+
+    // Attach event listeners for service buttons
+    document.querySelectorAll('.wa-service-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const serviceName = btn.getAttribute('data-service');
+        const msg = `Hi Shahran Beauty Parlor, I'd like to book an appointment for *${serviceName}*. Please share available slots and price details. Thank you!`;
+        openWhatsApp(msg);
+      });
+    });
+  }
+
+  function renderGallery() {
+    const galleryGrid = document.getElementById('galleryGrid');
+    galleryGrid.innerHTML = galleryImages.map(img => `
+      <div class="gallery-card"><img src="${img}" alt="Beauty work"></div>
+    `).join('');
+  }
+
+  // ---- All WhatsApp actions ----
+  function initWhatsAppTriggers() {
+    // Hero book button
+    const heroBook = document.getElementById('heroBookBtn');
+    if(heroBook) {
+      heroBook.addEventListener('click', (e) => {
+        e.preventDefault();
+        openWhatsApp("Hello Shahran Beauty Parlor, I would like to book an appointment. Please guide me with available dates.");
+      });
+    }
+    // Hero Inquiry button
+    const heroInquiry = document.getElementById('heroInquiryBtn');
+    if(heroInquiry) {
+      heroInquiry.addEventListener('click', (e) => {
+        e.preventDefault();
+        openWhatsApp("Hi, I have a query regarding your beauty services. Could you please assist me?");
+      });
+    }
+    // Header Inquiry button
+    const inquiryHeader = document.getElementById('inquiryBtnHeader');
+    if(inquiryHeader) {
+      inquiryHeader.addEventListener('click', (e) => {
+        e.preventDefault();
+        openWhatsApp("Hello, I'd like to make an inquiry about the services and packages at Shahran Beauty Parlor.");
+      });
+    }
+    // Floating WA
+    const floatWA = document.getElementById('floatingWABtn');
+    if(floatWA) {
+      floatWA.addEventListener('click', (e) => {
+        e.preventDefault();
+        openWhatsApp("Hi, I'm interested in your beauty services. Can you share more details?");
+      });
+    }
+
+    // Custom inquiry form submission via WhatsApp
+    const sendInquiry = document.getElementById('sendInquiryBtn');
+    if(sendInquiry) {
+      sendInquiry.addEventListener('click', () => {
+        const name = document.getElementById('inquiryName').value.trim();
+        const phone = document.getElementById('inquiryPhone').value.trim();
+        let msg = document.getElementById('inquiryMsg').value.trim();
+        let finalMsg = "New inquiry from website:\n";
+        if(name) finalMsg += `Name: ${name}\n`;
+        if(phone) finalMsg += `Phone: ${phone}\n`;
+        finalMsg += `Message: ${msg || "No specific message."}\n\nPlease respond to this inquiry.`;
+        if(!msg && !name) finalMsg = "Hello, I have a general inquiry about your services. Please reply back.";
+        openWhatsApp(finalMsg);
+      });
+    }
+  }
+
+  // Optional: Add service WA for each dynamically rendered
+  // run all after DOM
+  document.addEventListener('DOMContentLoaded', () => {
+    renderServices();
+    renderGallery();
+    initWhatsAppTriggers();
+  });
+</script>
+</body>
+</html>
