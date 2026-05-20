@@ -83,23 +83,24 @@
 <script>
   const WA_NUMBER = "918433412626";
   function openWhatsApp(text) { window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`, '_blank'); }
+  // All beauty-parlor related images (no animals, no irrelevant)
   const services = [
-    { name: "Bridal Makeup", desc: "Traditional + Airbrush finish, touch-up kit included", img: "https://images.pexels.com/photos/4666857/pexels-photo-4666857.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" },
-    { name: "Party Makeup", desc: "Glamorous look for sangeet/reception", img: "https://images.pexels.com/photos/4046557/pexels-photo-4046557.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" },
-    { name: "Hair Styling", desc: "Blow-dry, curls, braiding, updo", img: "https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" },
-    { name: "Facial & Glow", desc: "Organic gold facial, de-tan, deep cleansing", img: "https://images.pexels.com/photos/3757953/pexels-photo-3757953.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" },
-    { name: "Manicure & Pedicure", desc: "Nail shaping, cuticle care, gel polish", img: "https://images.pexels.com/photos/3998418/pexels-photo-3998418.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" },
-    { name: "Waxing", desc: "Full body / half body – smooth results", img: "https://images.pexels.com/photos/3822893/pexels-photo-3822893.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" },
-    { name: "Threading & Brow", desc: "Precise eyebrow shaping & upper lip", img: "https://images.pexels.com/photos/5218000/pexels-photo-5218000.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" },
-    { name: "Nail Art", desc: "French, 3D, gel extensions", img: "https://images.pexels.com/photos/4016603/pexels-photo-4016603.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" }
+    { name: "Bridal Makeup", desc: "Traditional + Airbrush finish, touch-up kit included", img: "https://images.unsplash.com/photo-1519671482749-fd09be7c5bf5?w=400&h=300&fit=crop" },
+    { name: "Party Makeup", desc: "Glamorous look for sangeet/reception", img: "https://images.unsplash.com/photo-1526045478516-aa4599b9cfec?w=400&h=300&fit=crop" },
+    { name: "Hair Styling", desc: "Blow-dry, curls, braiding, updo", img: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=400&h=300&fit=crop" },
+    { name: "Facial & Glow", desc: "Organic gold facial, de-tan, deep cleansing", img: "https://images.unsplash.com/photo-1570172619644-d2d6b0b4f5d2?w=400&h=300&fit=crop" },
+    { name: "Manicure & Pedicure", desc: "Nail shaping, cuticle care, gel polish", img: "https://images.unsplash.com/photo-1598274371894-a3b60d2482cc?w=400&h=300&fit=crop" },
+    { name: "Waxing", desc: "Full body / half body – smooth results", img: "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=400&h=300&fit=crop" },
+    { name: "Threading & Brow", desc: "Precise eyebrow shaping & upper lip", img: "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=400&h=300&fit=crop" },
+    { name: "Nail Art", desc: "French, 3D, gel extensions", img: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&h=300&fit=crop" }
   ];
   const galleryImages = [
-    "https://images.pexels.com/photos/3992121/pexels-photo-3992121.jpeg?auto=compress&cs=tinysrgb&w=400&h=280&fit=crop",
-    "https://images.pexels.com/photos/3998430/pexels-photo-3998430.jpeg?auto=compress&cs=tinysrgb&w=400&h=280&fit=crop",
-    "https://images.pexels.com/photos/3997995/pexels-photo-3997995.jpeg?auto=compress&cs=tinysrgb&w=400&h=280&fit=crop",
-    "https://images.pexels.com/photos/5217892/pexels-photo-5217892.jpeg?auto=compress&cs=tinysrgb&w=400&h=280&fit=crop",
-    "https://images.pexels.com/photos/4666856/pexels-photo-4666856.jpeg?auto=compress&cs=tinysrgb&w=400&h=280&fit=crop",
-    "https://images.pexels.com/photos/3998420/pexels-photo-3998420.jpeg?auto=compress&cs=tinysrgb&w=400&h=280&fit=crop"
+    "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&h=280&fit=crop",
+    "https://images.unsplash.com/photo-1595475207225-428b62bda831?w=400&h=280&fit=crop",
+    "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=400&h=280&fit=crop",
+    "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&h=280&fit=crop",
+    "https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=400&h=280&fit=crop",
+    "https://images.unsplash.com/photo-1595475207225-428b62bda831?w=400&h=280&fit=crop"
   ];
   function renderServices() {
     const grid = document.getElementById('servicesGrid');
