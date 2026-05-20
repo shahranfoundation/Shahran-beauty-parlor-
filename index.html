@@ -198,13 +198,6 @@
       font-size: 1.5rem;
     }
 
-    .price {
-      font-weight: 700;
-      color: #b55b4b;
-      font-size: 1.2rem;
-      margin: 10px 0;
-    }
-
     .service-card p {
       color: #7a5a52;
       font-size: 0.9rem;
@@ -441,7 +434,7 @@
   </div>
 </section>
 
-<!-- Catalog / Services -->
+<!-- Catalog / Services (without prices) -->
 <section id="services">
   <div class="container">
     <h2 class="section-title">Our Signature Services</h2>
@@ -534,16 +527,16 @@
     window.open(`https://wa.me/${WA_NUMBER}?text=${encodedText}`, '_blank');
   }
 
-  // Service Catalog Data
+  // Service Catalog Data (without prices)
   const services = [
-    { name: "Bridal Makeup", desc: "Traditional + Airbrush finish, touch-up kit included", price: "₹8,999", img: "https://images.unsplash.com/photo-1519671482749-fd09be7c5bf5?w=400&h=300&fit=crop" },
-    { name: "Party Makeup", desc: "Glamorous look for sangeet/reception", price: "₹4,499", img: "https://images.unsplash.com/photo-1526045478516-aa4599b9cfec?w=400&h=300&fit=crop" },
-    { name: "Hair Styling", desc: "Blow-dry, curls, braiding, updo", price: "₹1,499", img: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=400&h=300&fit=crop" },
-    { name: "Facial & Glow", desc: "Organic gold facial, de-tan, deep cleansing", price: "₹2,299", img: "https://images.unsplash.com/photo-1570172619644-d2d6b0b4f5d2?w=400&h=300&fit=crop" },
-    { name: "Manicure & Pedicure", desc: "Nail shaping, cuticle care, gel polish", price: "₹1,799", img: "https://images.unsplash.com/photo-1598274371894-a3b60d2482cc?w=400&h=300&fit=crop" },
-    { name: "Waxing", desc: "Full body / half body – smooth results", price: "₹1,299", img: "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=400&h=300&fit=crop" },
-    { name: "Threading & Brow", desc: "Precise eyebrow shaping & upper lip", price: "₹249", img: "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=400&h=300&fit=crop" },
-    { name: "Nail Art", desc: "French, 3D, gel extensions", price: "₹899", img: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&h=300&fit=crop" }
+    { name: "Bridal Makeup", desc: "Traditional + Airbrush finish, touch-up kit included", img: "https://images.unsplash.com/photo-1519671482749-fd09be7c5bf5?w=400&h=300&fit=crop" },
+    { name: "Party Makeup", desc: "Glamorous look for sangeet/reception", img: "https://images.unsplash.com/photo-1526045478516-aa4599b9cfec?w=400&h=300&fit=crop" },
+    { name: "Hair Styling", desc: "Blow-dry, curls, braiding, updo", img: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=400&h=300&fit=crop" },
+    { name: "Facial & Glow", desc: "Organic gold facial, de-tan, deep cleansing", img: "https://images.unsplash.com/photo-1570172619644-d2d6b0b4f5d2?w=400&h=300&fit=crop" },
+    { name: "Manicure & Pedicure", desc: "Nail shaping, cuticle care, gel polish", img: "https://images.unsplash.com/photo-1598274371894-a3b60d2482cc?w=400&h=300&fit=crop" },
+    { name: "Waxing", desc: "Full body / half body – smooth results", img: "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=400&h=300&fit=crop" },
+    { name: "Threading & Brow", desc: "Precise eyebrow shaping & upper lip", img: "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=400&h=300&fit=crop" },
+    { name: "Nail Art", desc: "French, 3D, gel extensions", img: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&h=300&fit=crop" }
   ];
 
   // Gallery images
@@ -563,7 +556,6 @@
         <img src="${service.img}" alt="${service.name}" loading="lazy">
         <h3>${service.name}</h3>
         <p>${service.desc}</p>
-        <div class="price">${service.price}</div>
         <button class="wa-service-btn" data-service="${service.name}"><i class="fab fa-whatsapp"></i> Book on WhatsApp</button>
       </div>
     `).join('');
@@ -572,7 +564,7 @@
     document.querySelectorAll('.wa-service-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         const serviceName = btn.getAttribute('data-service');
-        const msg = `Hi Shahran Beauty Parlor, I'd like to book an appointment for *${serviceName}*. Please share available slots and price details. Thank you!`;
+        const msg = `Hi Shahran Beauty Parlor, I'd like to book an appointment for *${serviceName}*. Please share available slots and more details. Thank you!`;
         openWhatsApp(msg);
       });
     });
@@ -637,7 +629,6 @@
     }
   }
 
-  // Optional: Add service WA for each dynamically rendered
   // run all after DOM
   document.addEventListener('DOMContentLoaded', () => {
     renderServices();
